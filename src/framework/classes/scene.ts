@@ -1,13 +1,53 @@
-import {Container} from "pixi.js";
-import {ActionResponse} from "../enums/ActionResponse.ts";
+import {Application, Container} from "pixi.js";
 
 export class Scene extends Container {
-    onBeforeIn(): ActionResponse | undefined {
-        return undefined
+    protected app?: Application;
+    private registered: boolean = false;
+    private displayStatus: boolean = false;
+
+    // 是否链接到Application
+    get isAttached() {
+        return this.app != null;
     }
 
-    onBeforeOut(): ActionResponse | undefined {
-        return undefined
+    // 是否未链接到Application
+    get isDetached() {
+        return !this.isAttached;
+    }
+
+    // 是否注册到场景管理器
+    get isRegistered() {
+        return this.registered;
+    }
+
+    // 是否在屏幕上
+    get isOnScreen() {
+        return this.displayStatus;
+    }
+
+    // 是否不在屏幕上
+    get isOffScreen() {
+        return !this.isOnScreen;
+    }
+
+    attach(app: Application): void {
+        this.app = app;
+    }
+
+    detach() {
+        this.app = undefined;
+    }
+
+    onRegistered(): void {
+        this.registered = true;
+    }
+
+    onUnregistered(): void {
+        this.registered = false;
+    }
+
+    onDisplayStatusChange(status: boolean) {
+        this.displayStatus = status;
     }
 
     onTick(): void {

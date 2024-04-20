@@ -1,7 +1,7 @@
 import {Application} from "pixi.js";
 
 export class Module {
-    app: Application
+    protected app: Application
 
     constructor(app: Application) {
         this.app = app;
