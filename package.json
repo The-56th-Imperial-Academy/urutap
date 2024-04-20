@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "bunx --bun vite",
     "build": "bunx --bun vite build",
-    "preview": "vite preview"
+    "preview": "bunx --bun vite preview"
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.12",
