@@ -1,4 +1,4 @@
-import {Container, TickerCallback} from "pixi.js";
+import {Container, Ticker, TickerCallback} from "pixi.js";
 
 export class Animate {
     protected target: Container;
@@ -37,5 +37,10 @@ export class Animate {
 
     reset() {
         this.playing = false;
+        if (this.actionState) {
+            Ticker.shared.remove(this.actionState.ticking);
+            this.actionState.resolver();
+            this.actionState = undefined;
+        }
     }
 }

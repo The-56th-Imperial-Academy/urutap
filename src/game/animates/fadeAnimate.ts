@@ -35,13 +35,4 @@ export class FadeAnimate extends Animate {
         Ticker.shared.add(this.actionState.ticking);
         return this.actionState.promise;
     }
-
-    reset() {
-        super.reset();
-        if (this.actionState) {
-            Ticker.shared.remove(this.actionState.ticking);
-            this.actionState.resolver();
-            this.actionState = undefined;
-        }
-    }
 }
