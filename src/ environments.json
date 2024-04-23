@@ -1,3 +1,6 @@
 {
-    "title": "urutap"
+    "title": "urutap",
+    "assets": {
+        "bgm": "/assets/sample.wav"
+    }
 }
