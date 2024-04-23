@@ -2,6 +2,7 @@ import {debounce} from "lodash-es";
 import {Application} from "pixi.js";
 import {Module} from "../framework/classes/module.ts";
 import {Scene} from "../framework/classes/scene.ts";
+import {implementedISceneResized, ISceneResizeData} from "../framework/interfaces/ISceneResize.ts";
 
 export class SceneManager extends Module {
     private registeredScenes: Map<string, typeof Scene> = new Map();
@@ -11,8 +12,10 @@ export class SceneManager extends Module {
         super(app);
 
         window.addEventListener("resize", debounce(() => {
-            for (const scene of (app.stage.children as Scene[])) {
-                scene.onResize();
+            const data = this.getSceneResizeData();
+            for (const container of app.stage.children) {
+                if (implementedISceneResized(container))
+                    container.onSceneResize(data);
             }
         }, 50, {leading: false, trailing: true}));
     }
@@ -28,6 +31,13 @@ export class SceneManager extends Module {
             await scene.onSwitchOut();
             this.app.stage.removeChild(scene);
         })();
+    }
+
+    getSceneResizeData(): ISceneResizeData {
+        const {width, height} = this.app.screen;
+        const [centerX, centerY] = [width / 2, height / 2];
+
+        return {width, height, centerX, centerY};
     }
 
     registerScene(name: string, scene: typeof Scene): void {
