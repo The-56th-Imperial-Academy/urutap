@@ -1,3 +1,4 @@
+import {debounce} from "lodash-es";
 import {Application} from "pixi.js";
 import {Module} from "../framework/classes/module.ts";
 import {Scene} from "../framework/classes/scene.ts";
@@ -8,6 +9,12 @@ export class SceneManager extends Module {
 
     constructor(app: Application) {
         super(app);
+
+        window.addEventListener("resize", debounce(() => {
+            for (const scene of (app.stage.children as Scene[])) {
+                scene.onResize();
+            }
+        }, 50, {leading: false, trailing: true}));
     }
 
     private displayScene(scene: Scene) {

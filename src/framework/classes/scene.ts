@@ -14,4 +14,7 @@ export class Scene extends Container {
     async onSwitchOut() {
         this.destroy();
     }
+
+    onResize() {
+    }
 }
