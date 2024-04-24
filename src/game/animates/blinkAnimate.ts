@@ -1,23 +1,30 @@
 import {Ticker} from "pixi.js";
 import {Animate} from "../../framework/classes/animate.ts";
-import {easeInOut} from "../../framework/utils/beizer.ts";
+import {easeInOutByT} from "../../framework/utils/beizer.ts";
 
 export class BlinkAnimate extends Animate {
-    play(frames: number = 20) {
+    private cycleStart: number = 0;
+
+    play(cycleTime: number = 300, spaceTime: number = 100, startTOffset: number = 0) {
         this.playing = true;
         if (this.actionState)
             return;
 
-        const steps = easeInOut(frames);
-        let index = 0;
-        this.actionState = Animate.createActionState(() => {
-            if (!this.playing)
-                return;
-            if (index >= steps.length) // loop
-                index = 1; // ignore easeInOut's head while looping
+        const totalTime = cycleTime + spaceTime;
+        this.cycleStart = Ticker.shared.lastTime - (cycleTime * startTOffset);
 
-            this.target.alpha = 1 - steps[index] / 100;
-            index++;
+        this.actionState = Animate.createActionState(() => {
+            const currentTime = Ticker.shared.lastTime;
+
+            // find nearest startTime
+            while (this.cycleStart + totalTime < currentTime)
+                this.cycleStart += totalTime;
+
+            const diffTime = currentTime - this.cycleStart;
+            if (diffTime > cycleTime)
+                this.target.alpha = 1;
+            else
+                this.target.alpha = 1 - easeInOutByT(diffTime / cycleTime) / 100;
         });
 
         Ticker.shared.add(this.actionState.ticking);
