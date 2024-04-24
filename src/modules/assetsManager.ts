@@ -25,7 +25,7 @@ export class AssetsManager extends Module {
 
         this.app.stage.children.forEach(container => {
             if (implementedIAssetsManagerProgressChanged(container))
-                container.onAssetsManagerProgressChanged(progress, this.isLoaded);
+                container.onAssetsManagerProgressChanged(this.percentage, this.isLoaded);
         });
     }
 }
