@@ -11,7 +11,7 @@ export class Scene extends Container implements ISceneResize {
     }
 
     initializeComplete() {
-        this.onSceneResize(this.app.modules.sceneManager.getSceneResizeData());
+        this.onSceneResize(this.app.modules.sceneManager.sceneSize);
     }
 
     async onSwitchIn() {

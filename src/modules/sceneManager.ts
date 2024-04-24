@@ -7,15 +7,21 @@ import {implementedISceneResized, ISceneResizeData} from "../framework/interface
 export class SceneManager extends Module {
     private registeredScenes: Map<string, typeof Scene> = new Map();
     private currentScene?: Scene;
+    private cachedSceneSize: ISceneResizeData;
+
+    get sceneSize() {
+        return this.cachedSceneSize;
+    }
 
     constructor(app: Application) {
         super(app);
 
+        this.cachedSceneSize = this.calculateSceneResizeData();
         window.addEventListener("resize", debounce(() => {
-            const data = this.getSceneResizeData();
+            this.cachedSceneSize = this.calculateSceneResizeData();
             for (const container of app.stage.children) {
                 if (implementedISceneResized(container))
-                    container.onSceneResize(data);
+                    container.onSceneResize(this.cachedSceneSize);
             }
         }, 50, {leading: false, trailing: true}));
     }
@@ -33,7 +39,7 @@ export class SceneManager extends Module {
         })();
     }
 
-    getSceneResizeData(): ISceneResizeData {
+    calculateSceneResizeData(): ISceneResizeData {
         const {width, height} = this.app.screen;
         const [centerX, centerY] = [width / 2, height / 2];
 
