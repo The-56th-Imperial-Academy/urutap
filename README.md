@@ -35,3 +35,9 @@ Then all generated contents will in /dist. If you want to preview the website, r
 ```shell
 bun run preview
 ```
+
+### License
+
+The source code in this repository is under MIT license.
+
+<span>*</span> The resources located under the 'public' directory, including but not limited to images, videos, and other media files, are not covered under MIT license. These resources are solely owned by the original author and may require separate authorization for usage.
