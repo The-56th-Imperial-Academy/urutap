@@ -1,12 +1,13 @@
 import "./index.css"
 import {upperFirst} from "lodash-es"
 import {Application, extensions} from "pixi.js";
-import {soundAsset} from "@pixi/sound";
+import {sound, soundAsset} from "@pixi/sound";
 import environments from "./ environments.json"
 import {Modules} from "./definition/modules";
 
 (async () => {
     extensions.add(soundAsset);
+    sound.disableAutoPause = true;
 
     const app = new Application();
     const $app = document.querySelector<HTMLElement>("#app");
