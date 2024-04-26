@@ -1,6 +1,373 @@
 {
     "title": "urutap",
+    "configs": {
+        "background": "#DCFCA4",
+        "characterHeightRatio": 0.72,
+        "bpm": 128,
+        "volume": 0.5,
+        "sync": false,
+        "grid": {
+            "number": 4,
+            "spacing": 2,
+            "border": 12
+        },
+        "effects": {
+            "touch-0": {
+                "type": "throw",
+                "options": {
+                    "number": {
+                        "min": 3,
+                        "max": 7
+                    },
+                    "texture": [
+                        {
+                            "name": "images/particle-1",
+                            "scale": 0.5
+                        }
+                    ]
+                },
+                "sound": "sounds/effect-1"
+            },
+            "touch-1": {
+                "type": "throw",
+                "options": {
+                    "number": {
+                        "min": 3,
+                        "max": 7
+                    },
+                    "texture": [
+                        {
+                            "name": "images/particle-1",
+                            "scale": 0.5
+                        }
+                    ]
+                },
+                "sound": "sounds/effect-1"
+            },
+            "touch-2": {
+                "type": "throw",
+                "options": {
+                    "number": {
+                        "min": 3,
+                        "max": 7
+                    },
+                    "texture": [
+                        {
+                            "name": "images/particle-1",
+                            "scale": 0.5
+                        }
+                    ]
+                },
+                "sound": "sounds/effect-1"
+            },
+            "touch-3": {
+                "type": "throw",
+                "options": {
+                    "number": {
+                        "min": 3,
+                        "max": 7
+                    },
+                    "texture": [
+                        {
+                            "name": "images/particle-1",
+                            "scale": 0.5
+                        }
+                    ]
+                },
+                "sound": "sounds/effect-1"
+            },
+            "touch-4": {
+                "type": "throw",
+                "options": {
+                    "number": {
+                        "min": 3,
+                        "max": 7
+                    },
+                    "texture": [
+                        {
+                            "name": "images/particle-1",
+                            "scale": 0.5
+                        }
+                    ]
+                },
+                "sound": "sounds/effect-1"
+            },
+            "touch-5": {
+                "type": "throw",
+                "options": {
+                    "number": {
+                        "min": 3,
+                        "max": 7
+                    },
+                    "texture": [
+                        {
+                            "name": "images/particle-1",
+                            "scale": 0.5
+                        }
+                    ]
+                },
+                "sound": "sounds/effect-1"
+            },
+            "touch-6": {
+                "type": "throw",
+                "options": {
+                    "number": {
+                        "min": 3,
+                        "max": 7
+                    },
+                    "texture": [
+                        {
+                            "name": "images/particle-1",
+                            "scale": 0.5
+                        }
+                    ]
+                },
+                "sound": "sounds/effect-1"
+            },
+            "touch-7": {
+                "type": "throw",
+                "options": {
+                    "number": {
+                        "min": 3,
+                        "max": 7
+                    },
+                    "texture": [
+                        {
+                            "name": "images/particle-1",
+                            "scale": 0.5
+                        }
+                    ]
+                },
+                "sound": "sounds/effect-1"
+            },
+            "touch-8": {
+                "type": "throw",
+                "options": {
+                    "number": {
+                        "min": 3,
+                        "max": 7
+                    },
+                    "texture": [
+                        {
+                            "name": "images/particle-1",
+                            "scale": 0.5
+                        }
+                    ]
+                },
+                "sound": "sounds/effect-1"
+            },
+            "touch-9": {
+                "type": "throw",
+                "options": {
+                    "number": {
+                        "min": 3,
+                        "max": 7
+                    },
+                    "texture": [
+                        {
+                            "name": "images/particle-1",
+                            "scale": 0.5
+                        }
+                    ]
+                },
+                "sound": "sounds/effect-1"
+            },
+            "touch-10": {
+                "type": "throw",
+                "options": {
+                    "number": {
+                        "min": 3,
+                        "max": 7
+                    },
+                    "texture": [
+                        {
+                            "name": "images/particle-1",
+                            "scale": 0.5
+                        }
+                    ]
+                },
+                "sound": "sounds/effect-1"
+            },
+            "touch-11": {
+                "type": "throw",
+                "options": {
+                    "number": {
+                        "min": 3,
+                        "max": 7
+                    },
+                    "texture": [
+                        {
+                            "name": "images/particle-1",
+                            "scale": 0.5
+                        }
+                    ]
+                },
+                "sound": "sounds/effect-1"
+            },
+            "touch-12": {
+                "type": "throw",
+                "options": {
+                    "number": {
+                        "min": 3,
+                        "max": 7
+                    },
+                    "texture": [
+                        {
+                            "name": "images/particle-1",
+                            "scale": 0.5
+                        }
+                    ]
+                },
+                "sound": "sounds/effect-1"
+            },
+            "touch-13": {
+                "type": "throw",
+                "options": {
+                    "number": {
+                        "min": 3,
+                        "max": 7
+                    },
+                    "texture": [
+                        {
+                            "name": "images/particle-1",
+                            "scale": 0.5
+                        }
+                    ]
+                },
+                "sound": "sounds/effect-1"
+            },
+            "touch-14": {
+                "type": "throw",
+                "options": {
+                    "number": {
+                        "min": 3,
+                        "max": 7
+                    },
+                    "texture": [
+                        {
+                            "name": "images/particle-1",
+                            "scale": 0.5
+                        }
+                    ]
+                },
+                "sound": "sounds/effect-1"
+            },
+            "touch-15": {
+                "type": "throw",
+                "options": {
+                    "number": {
+                        "min": 3,
+                        "max": 7
+                    },
+                    "texture": [
+                        {
+                            "name": "images/particle-1",
+                            "scale": 0.5
+                        }
+                    ]
+                },
+                "sound": "sounds/effect-1"
+            },
+            "easter-1anny": {
+                "type": "throw",
+                "options": {
+                    "number": {
+                        "min": 15,
+                        "max": 45
+                    },
+                    "texture": [
+                        {
+                            "name": "images/easter/1anny-1",
+                            "scale": 0.5
+                        },
+                        {
+                            "name": "images/easter/1anny-2",
+                            "scale": 0.5
+                        },
+                        {
+                            "name": "images/easter/1anny-3",
+                            "scale": 0.5
+                        },
+                        {
+                            "name": "images/easter/1anny-4",
+                            "scale": 0.5
+                        }
+                    ]
+                },
+                "sound": "sounds/easter/1anny"
+            }
+        },
+        "easterEggs": [
+            {
+                "matchers": [
+                    [
+                        0,
+                        1,
+                        5,
+                        9,
+                        12,
+                        13,
+                        14
+                    ],
+                    [
+                        1,
+                        2,
+                        6,
+                        10,
+                        13,
+                        14,
+                        15
+                    ]
+                ],
+                "effect": "easter-1anny"
+            },
+            {
+                "matchers": [
+                    [
+                        2,
+                        6,
+                        10,
+                        14,
+                        4,
+                        5,
+                        6,
+                        7
+                    ]
+                ],
+                "effect": "easter-jomanda"
+            }
+        ]
+    },
     "assets": {
-        "bgm": "/assets/sample.wav"
+        "fonts/SourceHanSansSC-Bold": "/assets/fonts/SourceHanSansSC-Bold.otf",
+        "images/uru": "/assets/images/uru.png",
+        "images/particle-1": "/assets/images/particle-1.png",
+        "images/particle-2": "/assets/images/particle-2.png",
+        "images/particle-3": "/assets/images/particle-3.png",
+        "images/particle-4": "/assets/images/particle-4.png",
+        "images/particle-5": "/assets/images/particle-5.png",
+        "images/particle-6": "/assets/images/particle-6.png",
+        "images/easter/1anny-1": "/assets/images/easter/1anny-1.png",
+        "images/easter/1anny-2": "/assets/images/easter/1anny-2.png",
+        "images/easter/1anny-3": "/assets/images/easter/1anny-3.png",
+        "images/easter/1anny-4": "/assets/images/easter/1anny-4.png",
+        "sounds/bgm": "/assets/sounds/bgm.wav",
+        "sounds/effect-1": "/assets/sounds/effect-1.wav",
+        "sounds/easter/1anny": "/assets/sounds/easter/1anny.wav"
+    },
+    "texts": {
+        "root": {
+            "mainButtonText": {
+                "loading": [
+                    "少女加载中...（${percentage}%）",
+                    "(｀･ω･)σ   ${percentage}%"
+                ],
+                "standby": [
+                    "let's gau!",
+                    "gau gau!",
+                    "press gau to start"
+                ]
+            }
+        }
     }
 }
