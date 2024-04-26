@@ -19,6 +19,8 @@ import {Modules} from "./definition/modules";
     await app.init({
         background: "white",
         resizeTo: $app,
+        roundPixels: true,
+        resolution: devicePixelRatio,
     });
     document.querySelector("#app")?.appendChild(app.canvas);
 
