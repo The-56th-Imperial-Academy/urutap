@@ -17,8 +17,7 @@
                 "animation": 80,
                 "logic": 320
             },
-            "volume": 0.5,
-            "volume": 0.1,
+            "volume": 0.2,
             "loopOffset": 12.03
         },
         "sync": true,
@@ -604,56 +603,200 @@
             }
         ]
     },
-    "assets": {
-        "fonts/SourceHanSansSC-Bold": "/urutap/assets/fonts/SourceHanSansSC-Bold.otf",
-        "images/uru": "/urutap/assets/images/uru.png",
-        "images/ui/speaker-on": "/urutap/assets/images/ui/speaker-on.png",
-        "images/ui/speaker-off": "/urutap/assets/images/ui/speaker-off.png",
-        "images/effects/ase": "/urutap/assets/images/effects/ase.png",
-        "images/effects/gas": "/urutap/assets/images/effects/gas.png",
-        "images/effects/gimon": "/urutap/assets/images/effects/gimon.png",
-        "images/effects/ha-to": "/urutap/assets/images/effects/ha-to.png",
-        "images/effects/iq1000": "/urutap/assets/images/effects/iq1000.png",
-        "images/effects/jinjinshon": "/urutap/assets/images/effects/jinjinshon.png",
-        "images/effects/kin": "/urutap/assets/images/effects/kin.png",
-        "images/effects/kobushi": "/urutap/assets/images/effects/kobushi.png",
-        "images/effects/kuma": "/urutap/assets/images/effects/kuma.png",
-        "images/effects/kushami": "/urutap/assets/images/effects/kushami.png",
-        "images/effects/negi": "/urutap/assets/images/effects/negi.png",
-        "images/effects/neko": "/urutap/assets/images/effects/neko.png",
-        "images/effects/niwatori": "/urutap/assets/images/effects/niwatori.png",
-        "images/effects/no": "/urutap/assets/images/effects/no.png",
-        "images/effects/nogiao": "/urutap/assets/images/effects/nogiao.png",
-        "images/effects/tamago": "/urutap/assets/images/effects/tamago.png",
-        "images/effects/tora": "/urutap/assets/images/effects/tora.png",
-        "images/effects/toriniku": "/urutap/assets/images/effects/toriniku.png",
-        "images/effects/unko": "/urutap/assets/images/effects/unko.png",
-        "images/effects/uruge": "/urutap/assets/images/effects/uruge.png",
-        "images/effects/wakuwaku": "/urutap/assets/images/effects/wakuwaku.png",
-        "images/easter/1anny-1": "/urutap/assets/images/easter/1anny-1.png",
-        "images/easter/1anny-2": "/urutap/assets/images/easter/1anny-2.png",
-        "images/easter/1anny-3": "/urutap/assets/images/easter/1anny-3.png",
-        "images/easter/1anny-4": "/urutap/assets/images/easter/1anny-4.png",
-        "images/credits/logo": "/urutap/assets/images/credits/logo.png",
-        "sounds/bgm": "/urutap/assets/sounds/bgm.mp3",
-        "sounds/se/e": "/urutap/assets/sounds/se/e.wav",
-        "sounds/se/gau": "/urutap/assets/sounds/se/gau.wav",
-        "sounds/se/giao": "/urutap/assets/sounds/se/giao.wav",
-        "sounds/se/ha": "/urutap/assets/sounds/se/ha.wav",
-        "sounds/se/jin": "/urutap/assets/sounds/se/jin.wav",
-        "sounds/se/kuma": "/urutap/assets/sounds/se/kuma.wav",
-        "sounds/se/kusai": "/urutap/assets/sounds/se/kusai.wav",
-        "sounds/se/kushami": "/urutap/assets/sounds/se/kushami.wav",
-        "sounds/se/mua": "/urutap/assets/sounds/se/mua.wav",
-        "sounds/se/negi": "/urutap/assets/sounds/se/negi.wav",
-        "sounds/se/neko": "/urutap/assets/sounds/se/neko.wav",
-        "sounds/se/niwatori-e": "/urutap/assets/sounds/se/niwatori-e.wav",
-        "sounds/se/niwatori-o": "/urutap/assets/sounds/se/niwatori-o.wav",
-        "sounds/se/no": "/urutap/assets/sounds/se/no.wav",
-        "sounds/se/onara": "/urutap/assets/sounds/se/onara.wav",
-        "sounds/se/wo": "/urutap/assets/sounds/se/wo.wav",
-        "sounds/staffroll": "/urutap/assets/sounds/staffroll.mp3"
-    },
+    "assets": [
+        {
+            "alias": "fonts/SourceHanSansSC-Bold",
+            "src": "./assets/fonts/SourceHanSansSC-Bold.otf"
+        },
+        {
+            "alias": "images/uru",
+            "src": "./assets/images/uru.png"
+        },
+        {
+            "alias": "images/ui/speaker-on",
+            "src": "./assets/images/ui/speaker-on.png"
+        },
+        {
+            "alias": "images/ui/speaker-off",
+            "src": "./assets/images/ui/speaker-off.png"
+        },
+        {
+            "alias": "images/effects/ase",
+            "src": "./assets/images/effects/ase.png"
+        },
+        {
+            "alias": "images/effects/gas",
+            "src": "./assets/images/effects/gas.png"
+        },
+        {
+            "alias": "images/effects/gimon",
+            "src": "./assets/images/effects/gimon.png"
+        },
+        {
+            "alias": "images/effects/ha-to",
+            "src": "./assets/images/effects/ha-to.png"
+        },
+        {
+            "alias": "images/effects/iq1000",
+            "src": "./assets/images/effects/iq1000.png"
+        },
+        {
+            "alias": "images/effects/jinjinshon",
+            "src": "./assets/images/effects/jinjinshon.png"
+        },
+        {
+            "alias": "images/effects/kin",
+            "src": "./assets/images/effects/kin.png"
+        },
+        {
+            "alias": "images/effects/kobushi",
+            "src": "./assets/images/effects/kobushi.png"
+        },
+        {
+            "alias": "images/effects/kuma",
+            "src": "./assets/images/effects/kuma.png"
+        },
+        {
+            "alias": "images/effects/kushami",
+            "src": "./assets/images/effects/kushami.png"
+        },
+        {
+            "alias": "images/effects/negi",
+            "src": "./assets/images/effects/negi.png"
+        },
+        {
+            "alias": "images/effects/neko",
+            "src": "./assets/images/effects/neko.png"
+        },
+        {
+            "alias": "images/effects/niwatori",
+            "src": "./assets/images/effects/niwatori.png"
+        },
+        {
+            "alias": "images/effects/no",
+            "src": "./assets/images/effects/no.png"
+        },
+        {
+            "alias": "images/effects/nogiao",
+            "src": "./assets/images/effects/nogiao.png"
+        },
+        {
+            "alias": "images/effects/tamago",
+            "src": "./assets/images/effects/tamago.png"
+        },
+        {
+            "alias": "images/effects/tora",
+            "src": "./assets/images/effects/tora.png"
+        },
+        {
+            "alias": "images/effects/toriniku",
+            "src": "./assets/images/effects/toriniku.png"
+        },
+        {
+            "alias": "images/effects/unko",
+            "src": "./assets/images/effects/unko.png"
+        },
+        {
+            "alias": "images/effects/uruge",
+            "src": "./assets/images/effects/uruge.png"
+        },
+        {
+            "alias": "images/effects/wakuwaku",
+            "src": "./assets/images/effects/wakuwaku.png"
+        },
+        {
+            "alias": "images/easter/1anny-1",
+            "src": "./assets/images/easter/1anny-1.png"
+        },
+        {
+            "alias": "images/easter/1anny-2",
+            "src": "./assets/images/easter/1anny-2.png"
+        },
+        {
+            "alias": "images/easter/1anny-3",
+            "src": "./assets/images/easter/1anny-3.png"
+        },
+        {
+            "alias": "images/easter/1anny-4",
+            "src": "./assets/images/easter/1anny-4.png"
+        },
+        {
+            "alias": "images/credits/logo",
+            "src": "./assets/images/credits/logo.png"
+        },
+        {
+            "alias": "sounds/bgm",
+            "src": "./assets/sounds/bgm.mp3"
+        },
+        {
+            "alias": "sounds/se/e",
+            "src": "./assets/sounds/se/e.wav"
+        },
+        {
+            "alias": "sounds/se/gau",
+            "src": "./assets/sounds/se/gau.wav"
+        },
+        {
+            "alias": "sounds/se/giao",
+            "src": "./assets/sounds/se/giao.wav"
+        },
+        {
+            "alias": "sounds/se/ha",
+            "src": "./assets/sounds/se/ha.wav"
+        },
+        {
+            "alias": "sounds/se/jin",
+            "src": "./assets/sounds/se/jin.wav"
+        },
+        {
+            "alias": "sounds/se/kuma",
+            "src": "./assets/sounds/se/kuma.wav"
+        },
+        {
+            "alias": "sounds/se/kusai",
+            "src": "./assets/sounds/se/kusai.wav"
+        },
+        {
+            "alias": "sounds/se/kushami",
+            "src": "./assets/sounds/se/kushami.wav"
+        },
+        {
+            "alias": "sounds/se/mua",
+            "src": "./assets/sounds/se/mua.wav"
+        },
+        {
+            "alias": "sounds/se/negi",
+            "src": "./assets/sounds/se/negi.wav"
+        },
+        {
+            "alias": "sounds/se/neko",
+            "src": "./assets/sounds/se/neko.wav"
+        },
+        {
+            "alias": "sounds/se/niwatori-e",
+            "src": "./assets/sounds/se/niwatori-e.wav"
+        },
+        {
+            "alias": "sounds/se/niwatori-o",
+            "src": "./assets/sounds/se/niwatori-o.wav"
+        },
+        {
+            "alias": "sounds/se/no",
+            "src": "./assets/sounds/se/no.wav"
+        },
+        {
+            "alias": "sounds/se/onara",
+            "src": "./assets/sounds/se/onara.wav"
+        },
+        {
+            "alias": "sounds/se/wo",
+            "src": "./assets/sounds/se/wo.wav"
+        },
+        {
+            "alias": "sounds/staffroll",
+            "src": "./assets/sounds/staffroll.mp3"
+        }
+    ],
     "texts": {
         "root": {
             "mainButtonText": {

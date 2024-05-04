@@ -63,6 +63,7 @@ export class RootScene extends Scene implements IAssetsManagerProgressChanged {
 
     initializeComplete() {
         super.initializeComplete();
+        this.app.modules.assetsManager.load();
         this.onAssetsManagerProgressChanged(this.app.modules.assetsManager.percentage, this.app.modules.assetsManager.isLoaded);
     }
 

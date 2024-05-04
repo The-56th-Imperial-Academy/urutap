@@ -16,7 +16,20 @@ export class AssetsManager extends Module {
     constructor(app: Application) {
         super(app);
 
-        Assets.addBundle("full", app.environments.assets);
+        Assets.init({
+            manifest: {
+                bundles: [
+                    {
+                        name: "full",
+                        assets: app.environments.assets,
+                    }
+                ]
+            }
+        });
+    }
+
+    load() {
+        Assets.backgroundLoadBundle("full");
         Assets.loadBundle("full", progress => this.updateProgress(progress));
     }
 
