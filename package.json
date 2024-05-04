@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "bunx --bun vite",
+    "dev": "bunx --bun vite --base /urutap",
     "build": "bunx --bun vite build --base /urutap",
     "preview": "bunx --bun vite preview"
   },
