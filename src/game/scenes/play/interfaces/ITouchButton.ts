@@ -4,8 +4,11 @@ import {FadeAnimate} from "../../../animates/fadeAnimate.ts";
 export interface ITouchButton {
     rowIndex: number;
     colIndex: number;
-    effectIndex: number;
-    effectId: string;
+    buttonIndex: number;
+    binding: {
+        effects: string[];
+        key: string;
+    };
     graphic: Graphics;
     animate?: FadeAnimate;
 }

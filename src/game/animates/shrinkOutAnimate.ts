@@ -1,9 +1,12 @@
 import {Ticker} from "pixi.js";
 import {Animate} from "../../framework/classes/animate.ts";
 
-export class FadeAnimate extends Animate {
+export class ShrinkOutAnimate extends Animate {
     private initialState?: {
-        alpha: number
+        scale: {
+            x: number,
+            y: number,
+        },
     };
 
     play(to: number, duration: number = 1000) {
@@ -12,7 +15,10 @@ export class FadeAnimate extends Animate {
             return;
 
         this.initialState = {
-            alpha: this.target.alpha,
+            scale: {
+                x: this.target.scale.x,
+                y: this.target.scale.y,
+            },
         };
         let remaining = duration;
         this.actionState = Animate.createActionState(() => {
@@ -23,7 +29,8 @@ export class FadeAnimate extends Animate {
             if (remaining <= 0)
                 remaining = 0;
 
-            this.target.alpha = to + ((this.initialState.alpha - to) * (remaining / duration));
+            const ratio = remaining / duration;
+            this.target.scale.set(to + ((this.initialState.scale.x - to) * ratio), to + ((this.initialState.scale.y - to) * ratio));
 
             if (remaining <= 0)
                 this.reset();

@@ -1,9 +1,11 @@
 export interface IEasterEgg {
     matchers: number[][],
-    effect: string,
+    effects: string[],
+    strictOrder: boolean,
 }
 
 export interface IEasterEggMatcher {
     matcher: number[],
-    effect: string,
+    effects: string[],
+    strictOrder: boolean,
 }

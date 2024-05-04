@@ -1,8 +1,8 @@
 import {Container, PointData, Ticker} from "pixi.js";
 import {Animate} from "../../framework/classes/animate.ts";
-import {easeInOutByT} from "../../framework/utils/beizer.ts";
+import {ISceneResizeData} from "../../framework/interfaces/ISceneResize.ts";
 
-export class BounceAnimate extends Animate {
+export class WaveAnimate extends Animate {
     private startTOffset: number;
     private cycleTime: number;
     private spaceTime: number;
@@ -11,13 +11,15 @@ export class BounceAnimate extends Animate {
     private baseScale: PointData = {x: 1, y: 1};
     private maxTransform: PointData = {x: 0.7, y: 0.7};
     private diffTransform: PointData = {x: 0, y: 0};
+    sceneSize: ISceneResizeData;
 
-    constructor(target: Container, cycleTime: number = 300, spaceTime: number = 300, startTOffset: number = 0) {
+    constructor(target: Container, cycleTime: number = 300, spaceTime: number = 300, startTOffset: number = 0, sceneSize: ISceneResizeData) {
         super(target);
         this.cycleTime = cycleTime;
         this.spaceTime = spaceTime;
         this.startTOffset = startTOffset;
         this.totalTime = this.cycleTime + this.spaceTime;
+        this.sceneSize = sceneSize;
     }
 
     setScale(scale: PointData) {
@@ -28,6 +30,10 @@ export class BounceAnimate extends Animate {
     setMaxTransform(scale: PointData) {
         this.maxTransform = scale;
         this.updateDiffTransform();
+    }
+
+    setSceneSize(sceneSize: ISceneResizeData) {
+        this.sceneSize = sceneSize;
     }
 
     private updateDiffTransform() {
@@ -54,16 +60,19 @@ export class BounceAnimate extends Animate {
                 this.cycleStart += this.totalTime;
 
             const diffTime = currentTime - this.cycleStart;
+
             if (diffTime > this.cycleTime) {
                 this.target.scale = this.baseScale;
             } else {
-                const ratio = easeInOutByT(diffTime / this.cycleTime) / 100;
+                const t = diffTime / this.cycleTime;
 
                 this.target.scale = {
-                    x: this.baseScale.x - this.diffTransform.x * ratio,
-                    y: this.baseScale.y - this.diffTransform.y * ratio,
+                    x: this.baseScale.x - this.diffTransform.x * t,
+                    y: this.baseScale.y - this.diffTransform.y * t,
                 };
+                this.target.alpha = 1 - t;
             }
+            this.target.position.set((this.sceneSize.width - this.target.width) / 2, (this.sceneSize.height - this.target.height) / 2 + this.sceneSize.height / 10);
         });
 
         Ticker.shared.add(this.actionState.ticking);

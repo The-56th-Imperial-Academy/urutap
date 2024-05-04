@@ -1,281 +1,441 @@
 {
     "title": "urutap",
     "configs": {
-        "background": "#DCFCA4",
+        "background": [
+            "#DCFCA4",
+            "#FCF0A4",
+            "#A4FCB3",
+            "#EBFCCE",
+            "#FCFBA4",
+            "#B7FCA4",
+            "#DCFCA4"
+        ],
         "characterHeightRatio": 0.72,
-        "bpm": 128,
-        "volume": 0.5,
-        "sync": false,
+        "bgm": {
+            "asset": "sounds/bgm",
+            "bpm": {
+                "animation": 80,
+                "logic": 320
+            },
+            "volume": 0.5,
+            "volume": 0.1,
+            "loopOffset": 12.03
+        },
+        "sync": true,
         "grid": {
             "number": 4,
             "spacing": 2,
-            "border": 12
+            "border": 12,
+            "bindings": [
+                {
+                    "effects": [
+                        "touch-0"
+                    ],
+                    "key": "1"
+                },
+                {
+                    "effects": [
+                        "touch-1"
+                    ],
+                    "key": "2"
+                },
+                {
+                    "effects": [
+                        "touch-2"
+                    ],
+                    "key": "3"
+                },
+                {
+                    "effects": [
+                        "touch-3"
+                    ],
+                    "key": "4"
+                },
+                {
+                    "effects": [
+                        "touch-4"
+                    ],
+                    "key": "Q"
+                },
+                {
+                    "effects": [
+                        "touch-5"
+                    ],
+                    "key": "W"
+                },
+                {
+                    "effects": [
+                        "touch-6"
+                    ],
+                    "key": "E"
+                },
+                {
+                    "effects": [
+                        "touch-7"
+                    ],
+                    "key": "R"
+                },
+                {
+                    "effects": [
+                        "touch-8"
+                    ],
+                    "key": "A"
+                },
+                {
+                    "effects": [
+                        "touch-9"
+                    ],
+                    "key": "S"
+                },
+                {
+                    "effects": [
+                        "touch-10"
+                    ],
+                    "key": "D"
+                },
+                {
+                    "effects": [
+                        "touch-11"
+                    ],
+                    "key": "F"
+                },
+                {
+                    "effects": [
+                        "touch-12"
+                    ],
+                    "key": "Z"
+                },
+                {
+                    "effects": [
+                        "touch-13"
+                    ],
+                    "key": "X"
+                },
+                {
+                    "effects": [
+                        "touch-14"
+                    ],
+                    "key": "C"
+                },
+                {
+                    "effects": [
+                        "touch-15"
+                    ],
+                    "key": "V"
+                }
+            ]
         },
         "effects": {
             "touch-0": {
-                "type": "throw",
+                "type": "shining",
                 "options": {
                     "number": {
-                        "min": 3,
-                        "max": 7
+                        "min": 8,
+                        "max": 16
                     },
-                    "texture": [
+                    "textures": [
                         {
-                            "name": "images/particle-1",
-                            "scale": 0.5
+                            "name": "images/effects/no",
+                            "scale": 0.2
                         }
                     ]
                 },
-                "sound": "sounds/effect-1"
+                "sound": "sounds/se/no"
             },
             "touch-1": {
-                "type": "throw",
+                "type": "throwing",
                 "options": {
                     "number": {
-                        "min": 3,
-                        "max": 7
+                        "min": 6,
+                        "max": 16
                     },
-                    "texture": [
+                    "textures": [
                         {
-                            "name": "images/particle-1",
+                            "name": "images/effects/neko",
+                            "scale": 0.5
+                        },
+                        {
+                            "name": "images/effects/neko",
+                            "scale": 0.5
+                        },
+                        {
+                            "name": "images/effects/neko",
+                            "scale": 0.5
+                        },
+                        {
+                            "name": "images/effects/neko",
+                            "scale": 0.5
+                        },
+                        {
+                            "name": "images/effects/neko",
+                            "scale": 0.5
+                        },
+                        {
+                            "name": "images/effects/neko",
+                            "scale": 0.5
+                        },
+                        {
+                            "name": "images/effects/neko",
+                            "scale": 0.5
+                        },
+                        {
+                            "name": "images/effects/neko",
+                            "scale": 0.5
+                        },
+                        {
+                            "name": "images/effects/neko",
+                            "scale": 0.5
+                        },
+                        {
+                            "name": "images/effects/tora",
                             "scale": 0.5
                         }
                     ]
                 },
-                "sound": "sounds/effect-1"
+                "sound": "sounds/se/neko"
             },
             "touch-2": {
-                "type": "throw",
+                "type": "throwing",
                 "options": {
                     "number": {
-                        "min": 3,
-                        "max": 7
+                        "min": 8,
+                        "max": 16
                     },
-                    "texture": [
+                    "textures": [
                         {
-                            "name": "images/particle-1",
+                            "name": "images/effects/unko",
                             "scale": 0.5
                         }
                     ]
                 },
-                "sound": "sounds/effect-1"
+                "sound": "sounds/se/kusai"
             },
             "touch-3": {
-                "type": "throw",
+                "type": "throwing",
                 "options": {
                     "number": {
                         "min": 3,
                         "max": 7
                     },
-                    "texture": [
+                    "textures": [
                         {
-                            "name": "images/particle-1",
+                            "name": "images/effects/tamago",
                             "scale": 0.5
                         }
                     ]
                 },
-                "sound": "sounds/effect-1"
+                "sound": "sounds/se/niwatori-o"
             },
             "touch-4": {
-                "type": "throw",
+                "type": "danmaku",
                 "options": {
                     "number": {
                         "min": 3,
                         "max": 7
                     },
-                    "texture": [
-                        {
-                            "name": "images/particle-1",
-                            "scale": 0.5
-                        }
+                    "texts": [
+                        "giao",
+                        "giao",
+                        "giao",
+                        "giao",
+                        "giao",
+                        "giao!",
+                        "giao!",
+                        "giao!",
+                        "giao!",
+                        "giao!",
+                        "giao!!",
+                        "giao!!",
+                        "giaogiao!",
+                        "giaogiao!",
+                        "啊？",
+                        "no giao!"
                     ]
                 },
-                "sound": "sounds/effect-1"
+                "sound": "sounds/se/giao"
             },
             "touch-5": {
-                "type": "throw",
+                "type": "throwing",
                 "options": {
                     "number": {
-                        "min": 3,
-                        "max": 7
+                        "min": 6,
+                        "max": 12
                     },
-                    "texture": [
+                    "textures": [
                         {
-                            "name": "images/particle-1",
+                            "name": "images/effects/iq1000",
                             "scale": 0.5
                         }
                     ]
                 },
-                "sound": "sounds/effect-1"
+                "sound": "sounds/se/gau"
             },
             "touch-6": {
-                "type": "throw",
+                "type": "throwing",
                 "options": {
                     "number": {
-                        "min": 3,
-                        "max": 7
+                        "min": 6,
+                        "max": 16
                     },
-                    "texture": [
+                    "textures": [
                         {
-                            "name": "images/particle-1",
+                            "name": "images/effects/kuma",
                             "scale": 0.5
                         }
                     ]
                 },
-                "sound": "sounds/effect-1"
+                "sound": "sounds/se/kuma"
             },
             "touch-7": {
-                "type": "throw",
+                "type": "shining",
                 "options": {
                     "number": {
                         "min": 3,
                         "max": 7
                     },
-                    "texture": [
+                    "textures": [
                         {
-                            "name": "images/particle-1",
+                            "name": "images/effects/niwatori",
                             "scale": 0.5
                         }
                     ]
                 },
-                "sound": "sounds/effect-1"
+                "sound": "sounds/se/niwatori-e"
             },
             "touch-8": {
-                "type": "throw",
+                "type": "danmaku",
                 "options": {
                     "number": {
-                        "min": 3,
-                        "max": 7
+                        "min": 2,
+                        "max": 5
                     },
-                    "texture": [
-                        {
-                            "name": "images/particle-1",
-                            "scale": 0.5
-                        }
+                    "texts": [
+                        "我",
+                        "我？"
                     ]
                 },
-                "sound": "sounds/effect-1"
+                "sound": "sounds/se/wo"
             },
             "touch-9": {
-                "type": "throw",
+                "type": "throwing",
                 "options": {
                     "number": {
-                        "min": 3,
-                        "max": 7
+                        "min": 8,
+                        "max": 8
                     },
-                    "texture": [
+                    "textures": [
                         {
-                            "name": "images/particle-1",
-                            "scale": 0.5
+                            "name": "images/effects/negi",
+                            "scale": 0.2
                         }
                     ]
                 },
-                "sound": "sounds/effect-1"
+                "sound": "sounds/se/negi"
             },
             "touch-10": {
-                "type": "throw",
+                "type": "throwing",
                 "options": {
                     "number": {
-                        "min": 3,
-                        "max": 7
+                        "min": 8,
+                        "max": 14
                     },
-                    "texture": [
+                    "textures": [
                         {
-                            "name": "images/particle-1",
-                            "scale": 0.5
+                            "name": "images/effects/kin",
+                            "scale": 0.2
                         }
                     ]
                 },
-                "sound": "sounds/effect-1"
+                "sound": "sounds/se/jin"
             },
             "touch-11": {
-                "type": "throw",
+                "type": "throwing",
                 "options": {
                     "number": {
-                        "min": 3,
-                        "max": 7
+                        "min": 6,
+                        "max": 12
                     },
-                    "texture": [
+                    "textures": [
                         {
-                            "name": "images/particle-1",
+                            "name": "images/effects/ha-to",
                             "scale": 0.5
                         }
                     ]
                 },
-                "sound": "sounds/effect-1"
+                "sound": "sounds/se/mua"
             },
             "touch-12": {
-                "type": "throw",
+                "type": "throwing",
                 "options": {
                     "number": {
                         "min": 3,
                         "max": 7
                     },
-                    "texture": [
+                    "textures": [
                         {
-                            "name": "images/particle-1",
+                            "name": "images/effects/gimon",
                             "scale": 0.5
                         }
                     ]
                 },
-                "sound": "sounds/effect-1"
+                "sound": "sounds/se/e"
             },
             "touch-13": {
-                "type": "throw",
+                "type": "throwing",
                 "options": {
                     "number": {
-                        "min": 3,
-                        "max": 7
+                        "min": 6,
+                        "max": 10
                     },
-                    "texture": [
+                    "textures": [
                         {
-                            "name": "images/particle-1",
+                            "name": "images/effects/gas",
                             "scale": 0.5
                         }
                     ]
                 },
-                "sound": "sounds/effect-1"
+                "sound": "sounds/se/onara"
             },
             "touch-14": {
-                "type": "throw",
+                "type": "shining",
                 "options": {
                     "number": {
-                        "min": 3,
-                        "max": 7
+                        "min": 4,
+                        "max": 8
                     },
-                    "texture": [
+                    "textures": [
                         {
-                            "name": "images/particle-1",
+                            "name": "images/effects/kushami",
                             "scale": 0.5
                         }
                     ]
                 },
-                "sound": "sounds/effect-1"
+                "sound": "sounds/se/kushami"
             },
             "touch-15": {
-                "type": "throw",
+                "type": "throwing",
                 "options": {
                     "number": {
                         "min": 3,
                         "max": 7
                     },
-                    "texture": [
+                    "textures": [
                         {
-                            "name": "images/particle-1",
+                            "name": "images/effects/uruge",
                             "scale": 0.5
                         }
                     ]
                 },
-                "sound": "sounds/effect-1"
+                "sound": "sounds/se/ha"
             },
             "easter-1anny": {
-                "type": "throw",
+                "type": "throwing",
                 "options": {
                     "number": {
                         "min": 15,
                         "max": 45
                     },
-                    "texture": [
+                    "textures": [
                         {
                             "name": "images/easter/1anny-1",
                             "scale": 0.5
@@ -294,7 +454,77 @@
                         }
                     ]
                 },
-                "sound": "sounds/easter/1anny"
+                "sound": ""
+            },
+            "special-nogiao": {
+                "type": "throwing",
+                "options": {
+                    "number": {
+                        "min": 8,
+                        "max": 14
+                    },
+                    "textures": [
+                        {
+                            "name": "images/effects/nogiao",
+                            "scale": 0.5
+                        }
+                    ]
+                },
+                "sound": ""
+            },
+            "special-nogau": {
+                "type": "danmaku",
+                "options": {
+                    "number": {
+                        "min": 8,
+                        "max": 14
+                    },
+                    "texts": [
+                        "？",
+                        "？",
+                        "？",
+                        "？",
+                        "？",
+                        "？？？",
+                        "？？？",
+                        "？？？？？？？？？？",
+                        "yes giao",
+                        "yes giao！"
+                    ]
+                },
+                "sound": ""
+            },
+            "special-niwatori": {
+                "type": "throwing",
+                "options": {
+                    "number": {
+                        "min": 6,
+                        "max": 12
+                    },
+                    "textures": [
+                        {
+                            "name": "images/effects/toriniku",
+                            "scale": 0.5
+                        }
+                    ]
+                },
+                "sound": ""
+            },
+            "special-jinjinshon": {
+                "type": "throwing",
+                "options": {
+                    "number": {
+                        "min": 4,
+                        "max": 6
+                    },
+                    "textures": [
+                        {
+                            "name": "images/effects/jinjinshon",
+                            "scale": 0.7
+                        }
+                    ]
+                },
+                "sound": ""
             }
         },
         "easterEggs": [
@@ -319,41 +549,110 @@
                         15
                     ]
                 ],
-                "effect": "easter-1anny"
+                "effects": [
+                    "easter-1anny"
+                ]
             },
             {
                 "matchers": [
                     [
-                        2,
-                        6,
-                        10,
-                        14,
-                        4,
-                        5,
-                        6,
+                        0,
+                        4
+                    ]
+                ],
+                "effects": [
+                    "special-nogiao"
+                ],
+                "strictOrder": true
+            },
+            {
+                "matchers": [
+                    [
+                        0,
+                        5
+                    ]
+                ],
+                "effects": [
+                    "special-nogau"
+                ],
+                "strictOrder": true
+            },
+            {
+                "matchers": [
+                    [
+                        3,
                         7
                     ]
                 ],
-                "effect": "easter-jomanda"
+                "effects": [
+                    "special-niwatori"
+                ],
+                "strictOrder": true
+            },
+            {
+                "matchers": [
+                    [
+                        10,
+                        10,
+                        6
+                    ]
+                ],
+                "effects": [
+                    "special-jinjinshon"
+                ],
+                "strictOrder": true
             }
         ]
     },
     "assets": {
         "fonts/SourceHanSansSC-Bold": "/assets/fonts/SourceHanSansSC-Bold.otf",
         "images/uru": "/assets/images/uru.png",
-        "images/particle-1": "/assets/images/particle-1.png",
-        "images/particle-2": "/assets/images/particle-2.png",
-        "images/particle-3": "/assets/images/particle-3.png",
-        "images/particle-4": "/assets/images/particle-4.png",
-        "images/particle-5": "/assets/images/particle-5.png",
-        "images/particle-6": "/assets/images/particle-6.png",
+        "images/ui/speaker-on": "/assets/images/ui/speaker-on.png",
+        "images/ui/speaker-off": "/assets/images/ui/speaker-off.png",
+        "images/effects/ase": "/assets/images/effects/ase.png",
+        "images/effects/gas": "/assets/images/effects/gas.png",
+        "images/effects/gimon": "/assets/images/effects/gimon.png",
+        "images/effects/ha-to": "/assets/images/effects/ha-to.png",
+        "images/effects/iq1000": "/assets/images/effects/iq1000.png",
+        "images/effects/jinjinshon": "/assets/images/effects/jinjinshon.png",
+        "images/effects/kin": "/assets/images/effects/kin.png",
+        "images/effects/kobushi": "/assets/images/effects/kobushi.png",
+        "images/effects/kuma": "/assets/images/effects/kuma.png",
+        "images/effects/kushami": "/assets/images/effects/kushami.png",
+        "images/effects/negi": "/assets/images/effects/negi.png",
+        "images/effects/neko": "/assets/images/effects/neko.png",
+        "images/effects/niwatori": "/assets/images/effects/niwatori.png",
+        "images/effects/no": "/assets/images/effects/no.png",
+        "images/effects/nogiao": "/assets/images/effects/nogiao.png",
+        "images/effects/tamago": "/assets/images/effects/tamago.png",
+        "images/effects/tora": "/assets/images/effects/tora.png",
+        "images/effects/toriniku": "/assets/images/effects/toriniku.png",
+        "images/effects/unko": "/assets/images/effects/unko.png",
+        "images/effects/uruge": "/assets/images/effects/uruge.png",
+        "images/effects/wakuwaku": "/assets/images/effects/wakuwaku.png",
         "images/easter/1anny-1": "/assets/images/easter/1anny-1.png",
         "images/easter/1anny-2": "/assets/images/easter/1anny-2.png",
         "images/easter/1anny-3": "/assets/images/easter/1anny-3.png",
         "images/easter/1anny-4": "/assets/images/easter/1anny-4.png",
-        "sounds/bgm": "/assets/sounds/bgm.wav",
-        "sounds/effect-1": "/assets/sounds/effect-1.wav",
-        "sounds/easter/1anny": "/assets/sounds/easter/1anny.wav"
+        "images/credits/logo": "/assets/images/credits/logo.png",
+        "sounds/bgm": "/assets/sounds/bgm.mp3",
+        "sounds/se/e": "/assets/sounds/se/e.wav",
+        "sounds/se/gau": "/assets/sounds/se/gau.wav",
+        "sounds/se/giao": "/assets/sounds/se/giao.wav",
+        "sounds/se/ha": "/assets/sounds/se/ha.wav",
+        "sounds/se/jin": "/assets/sounds/se/jin.wav",
+        "sounds/se/kuma": "/assets/sounds/se/kuma.wav",
+        "sounds/se/kusai": "/assets/sounds/se/kusai.wav",
+        "sounds/se/kushami": "/assets/sounds/se/kushami.wav",
+        "sounds/se/mua": "/assets/sounds/se/mua.wav",
+        "sounds/se/negi": "/assets/sounds/se/negi.wav",
+        "sounds/se/neko": "/assets/sounds/se/neko.wav",
+        "sounds/se/niwatori-e": "/assets/sounds/se/niwatori-e.wav",
+        "sounds/se/niwatori-o": "/assets/sounds/se/niwatori-o.wav",
+        "sounds/se/no": "/assets/sounds/se/no.wav",
+        "sounds/se/onara": "/assets/sounds/se/onara.wav",
+        "sounds/se/wo": "/assets/sounds/se/wo.wav",
+        "sounds/staffroll": "/assets/sounds/staffroll.mp3"
     },
     "texts": {
         "root": {
