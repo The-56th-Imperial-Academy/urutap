@@ -5,6 +5,7 @@ import {Scene} from "../framework/classes/scene.ts";
 import {implementedISceneResized, ISceneResizeData} from "../framework/interfaces/ISceneResize.ts";
 
 export class SceneManager extends Module {
+    private root?: string;
     private registeredScenes: Map<string, typeof Scene> = new Map();
     private currentScene?: Scene;
     private cachedSceneSize: ISceneResizeData;
@@ -16,6 +17,13 @@ export class SceneManager extends Module {
     constructor(app: Application) {
         super(app);
 
+        history.pushState(null, "");
+        window.addEventListener("popstate", event => {
+            const target = (event.state?.name as string ?? this.root);
+            if (target)
+                this.switchTo(target, true);
+        });
+
         this.cachedSceneSize = this.calculateSceneResizeData();
         window.addEventListener("resize", debounce(() => {
             this.cachedSceneSize = this.calculateSceneResizeData();
@@ -26,10 +34,12 @@ export class SceneManager extends Module {
         }, 50, {leading: false, trailing: true}));
     }
 
-    private displayScene(scene: Scene) {
+    private displayScene(scene: Scene, name?: string) {
         this.currentScene = scene;
         this.app.stage.addChild(scene);
         scene.onSwitchIn();
+        if (name)
+            history.pushState({name}, "");
     }
 
     private hideScene(scene: Scene) {
@@ -46,25 +56,25 @@ export class SceneManager extends Module {
         return {width, height, centerX, centerY};
     }
 
-    registerScene(name: string, scene: typeof Scene): void {
+    registerScene(name: string, scene: typeof Scene, isRoot: boolean = false): void {
         if (this.registeredScenes.has(name))
             throw new Error(`Cannot register scene ${name}. already registered`);
         this.registeredScenes.set(name, scene);
+        if (isRoot)
+            this.root = name;
     }
 
     unregisterScene(name: string): void {
         this.registeredScenes.delete(name);
     }
 
-    switchTo(scene: string): void
-    switchTo(scene: typeof Scene): void
-    switchTo(scene: string | typeof Scene): void {
-        const targetScene = typeof scene === "string" ? this.registeredScenes.get(scene) : scene;
+    switchTo(scene: string, noHistory: boolean = false): void {
+        const targetScene = this.registeredScenes.get(scene);
         if (targetScene == null)
-            throw new Error(`unable switch scene when target is unavailable`);
+            throw new Error(`can not found scene "${scene}".`);
 
         if (this.currentScene)
             this.hideScene(this.currentScene);
-        this.displayScene(new targetScene(this.app));
+        this.displayScene(new targetScene(this.app), noHistory ? undefined : scene);
     }
 }
