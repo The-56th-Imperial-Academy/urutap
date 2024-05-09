@@ -617,6 +617,14 @@
             "src": "./assets/images/ui/speaker-off.png"
         },
         {
+            "alias": "images/ui/sync-on",
+            "src": "./assets/images/ui/sync-on.png"
+        },
+        {
+            "alias": "images/ui/sync-off",
+            "src": "./assets/images/ui/sync-off.png"
+        },
+        {
             "alias": "images/effects/ase",
             "src": "./assets/images/effects/ase.png"
         },

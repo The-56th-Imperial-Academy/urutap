@@ -36,6 +36,7 @@ export class PlayScene extends Scene implements IKeyboardStateChanged {
     });
     private touchLayer: Container = new Container();
 
+    private sync: boolean;
     private muted: boolean = false;
     private bgm?: IMediaInstance;
     private easterEggs: IEasterEggMatcher[] = [];
@@ -50,6 +51,7 @@ export class PlayScene extends Scene implements IKeyboardStateChanged {
     constructor(app: Application) {
         super(app);
 
+        this.sync = this.app.environments.configs.sync;
         this.easterEggs = (this.app.environments.configs.easterEggs as IEasterEgg[]).reduce((array, item) => {
             item.matchers.forEach(matcher => array.push({matcher, effects: item.effects, strictOrder: item.strictOrder}));
             return array;
@@ -65,6 +67,7 @@ export class PlayScene extends Scene implements IKeyboardStateChanged {
         this.initializeCharacter();
         this.initializeTouchLayer();
         this.initializeMuteButton();
+        this.initializeSyncButton();
         this.initializeComplete();
     }
 
@@ -244,7 +247,7 @@ export class PlayScene extends Scene implements IKeyboardStateChanged {
     }
 
     initializeMuteButton() {
-        const margin = 10;
+        const margin = {x: 10, y: 10};
         const size = 30;
         const textures = {
             on: Texture.from("images/ui/speaker-on"),
@@ -274,7 +277,42 @@ export class PlayScene extends Scene implements IKeyboardStateChanged {
 
         this.addChild(sprite);
         this.sceneResizeCallbacks.push(data => {
-            sprite.position.set(data.width - margin, margin);
+            sprite.position.set(data.width - margin.x, margin.y);
+        });
+    }
+
+    initializeSyncButton() {
+        const margin = {x: 10, y: 50};
+        const size = 30;
+        const textures = {
+            on: Texture.from("images/ui/sync-on"),
+            off: Texture.from("images/ui/sync-off"),
+        };
+        const sprite = new Sprite({
+            texture: this.sync ? textures.on : textures.off,
+            width: size,
+            height: size,
+            anchor: {
+                x: 1,
+                y: 0
+            },
+            alpha: 0.2,
+            interactive: true,
+            cursor: "pointer",
+        });
+        const action = () => {
+            const targetSync = !this.sync;
+            sprite.texture = targetSync ? textures.on : textures.off;
+            sprite.setSize(size, size);
+            this.sync = targetSync;
+        };
+
+        sprite.addEventListener("click", action);
+        sprite.addEventListener("tap", action);
+
+        this.addChild(sprite);
+        this.sceneResizeCallbacks.push(data => {
+            sprite.position.set(data.width - margin.x, margin.y);
         });
     }
 
@@ -284,12 +322,13 @@ export class PlayScene extends Scene implements IKeyboardStateChanged {
         button.graphic.alpha = 1;
         button.animate.play(0, 300);
 
-        if (!this.app.environments.configs.sync) {
+        if (!this.sync) {
             button.binding.effects.forEach(effectId => {
                 const effect = this.effectMapping[effectId];
                 if (effect)
                     this.effectExecute(effect);
             });
+            this.effectUpdateHistory([button.buttonIndex]);
             return;
         }
 
