@@ -94,7 +94,7 @@ export class CreditsScene extends Scene {
         for (const {text, size} of texts) {
             const element = new Text({
                 style: {
-                    fontFamily: "Sourcehansanssc Bold",
+                    // fontFamily: "Sourcehansanssc Bold",
                     fontSize: size,
                     fill: 0x8f8d03,
                     align: "center",

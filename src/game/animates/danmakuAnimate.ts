@@ -26,7 +26,7 @@ export class DanmakuAnimate extends Animate {
             const element = new Text({
                 text,
                 style: {
-                    fontFamily: "Sourcehansanssc Bold",
+                    // fontFamily: "Sourcehansanssc Bold",
                     fill: 0xffffff,
                     stroke: 1,
                     letterSpacing: 0.5,

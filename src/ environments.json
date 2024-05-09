@@ -605,10 +605,6 @@
     },
     "assets": [
         {
-            "alias": "fonts/SourceHanSansSC-Bold",
-            "src": "./assets/fonts/SourceHanSansSC-Bold.otf"
-        },
-        {
             "alias": "images/uru",
             "src": "./assets/images/uru.png"
         },

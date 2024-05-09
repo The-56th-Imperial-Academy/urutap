@@ -11,7 +11,7 @@ export class RootScene extends Scene implements IAssetsManagerProgressChanged {
     private startButtonText: Text = new Text({
         anchor: 0.5,
         style: {
-            fontFamily: "Sourcehansanssc Bold",
+            // fontFamily: "Sourcehansanssc Bold",
             fill: 0xffffff,
             stroke: 1,
             letterSpacing: 1.5,
@@ -33,7 +33,7 @@ export class RootScene extends Scene implements IAssetsManagerProgressChanged {
             y: 0,
         },
         style: {
-            fontFamily: "Sourcehansanssc Bold",
+            // fontFamily: "Sourcehansanssc Bold",
             fontSize: 16,
             fill: 0xffffff,
             stroke: 1,
